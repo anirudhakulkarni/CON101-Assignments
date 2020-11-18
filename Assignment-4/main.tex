@@ -122,7 +122,10 @@ F                                          & 9 & 9 & 6 & 9 & 7 & 0              
 
 \section{Exercise 40}
 \subsection{A possible arrangement of subnet masks}
-
+Department A: 72 hosts, that is nearest power of 2 is 128. Hence addresses will be in the range 200.1.1.0 to 200.1.1.127. Hence subnet mask is 255.255.255.128\\
+Department B: 35 hosts, that is nearest power of 2 is 64. Hence addresses will be in the range 200.1.1.128 to 200.1.1.191. Hence subnet mask is 255.255.255.192\\
+Department C: 20 hosts, that is nearest power of 2 is 32. Hence addresses will be in the range 200.1.1.192 to 200.1.1.223. Hence subnet mask is 255.255.255.224\\
+Department D: 18 hosts, that is nearest power of 2 is 32. Hence addresses will be in the range 200.1.1.224 to 200.1.1.255. Hence subnet mask is 255.255.255.224\\
 \subsection{If department D grows to 34 hosts}
-
+We can assign multiple subnets to a department to reduce vacant positions. Dividing A into 2 parts, we get 32 hosts and 40 hosts. Dividing subnets gives a subnet of 32 size and other with next power of 2 after 40, that is 64. So we are left with another 32 addresses which can be then used to allocate to Department D
 \end{document}
