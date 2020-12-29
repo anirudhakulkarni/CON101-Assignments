@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+	\addtolength{\oddsidemargin}{-.875in}
+		\addtolength{\textheight}{0.5in}
+\usepackage{graphicx}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{amsmath}
+\title{CON101 : Match Making}
+\author{Anirudha Kulkarni}
+\date{December 2020}
+\usepackage{graphics}
+\usepackage{hyperref}
+\usepackage[export]{adjustbox}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\begin{document}
+
+\maketitle
+\section{Protocol for magic trick}
+\begin{itemize}
+    \item  To communicate suit: As there are five cards and 4 suits, by pigeonhole principle there exists 2 cards with same suite. So select those 2 cards. Assistant can show any of them to the magician and hence he can communicate the suit of the card.
+    \item To communicate number: again by pigeonhole principle there are 13 cards and hence there exits at 6 cards gap between a and b or b and a when arranged by wrapping up after Q card. Assistant shows the card which is behind by at most 6 cards. To communicate the exact number by which the hidden card from shown card we can assign a number to each ordering based on rank and suit. So magician needs to memorize 6 combinations.
+    \item Hence final approach: Choose 2 cards with same suit. Display card which lags at most by 6 cards from other. Display remaining 3 cards in a order corresponding to gap between ranks. Magician simply adds corresponding number to displayed card.
+\end{itemize}
+\section{Why same trick with 4 cards will not work}
+\begin{itemize}
+    \item The previous protocol will not work. As for determaining suit we need at least 5 cards to ensure there is repeatation of suits.
+    \item Brute force approach: Consider maximum possible card chosing with 4 cards. Its 52C4. On the other hand Maximum possible sequence generation with 3 cards is 52P3=52C3*3!. Even if we assume that magician can remember all these sequences and assign a card corresponding to each we will have 52C4/52P3=270725/132600=3 cards per sequence. Hence there will be 1/3 uncertainty to predict the correct card.
+    \item Hence not possible with just displaying 3 cards with some order. We also need some other information to be communicated.
+\end{itemize}
+
+\end{document}
